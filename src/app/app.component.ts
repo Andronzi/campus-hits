@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AlertService} from "./alert/alert.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'campus-hits';
+  constructor(private alertService: AlertService) {
+  }
+
+  alertAboutSuccessEvent() {
+    this.alertService.success();
+  }
 }
