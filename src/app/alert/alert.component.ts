@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AlertService} from "./alert.service";
+
+let input = Input;
 
 @Component({
   selector: 'app-alert',
@@ -7,12 +9,13 @@ import {AlertService} from "./alert.service";
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit {
+  @Input() id = "id";
   public alertsContainer: any = [];
 
   constructor(private alertService: AlertService) { }
 
   ngOnInit(): void {
-    this.alertService.alertSubject.subscribe(alert => {
+    this.alertService.subscribeOnConcreteAlerts(this.id).subscribe(alert => {
       if (!alert) return;
 
       this.alertsContainer.push(alert);
