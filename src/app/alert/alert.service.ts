@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import {filter, pipe, Subject} from "rxjs";
-import {Alert, IAlertOptions} from "./alert.model";
+import {Injectable} from '@angular/core';
+import {filter, Subject} from "rxjs";
+import {Alert, AlertType, IAlertOptions} from "./alert.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class AlertService {
   }
 
   success(message: string, options?: IAlertOptions) {
-    this.alert(new Alert({ message, ...options }));
+    this.alert(new Alert({ message, type: AlertType.Success, ...options }));
   }
 
   alert(alert: Alert) {
