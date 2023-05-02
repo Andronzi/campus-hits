@@ -9,7 +9,7 @@ let input = Input;
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit {
-  @Input() id = "id";
+  @Input() id!: string;
   public alertsContainer: any = [];
 
   constructor(private alertService: AlertService) { }

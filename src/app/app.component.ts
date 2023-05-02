@@ -7,10 +7,10 @@ import {AlertService} from "./alert/alert.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private alertService: AlertService) {
-  }
+  constructor(private alertService: AlertService) { }
 
   alertAboutSuccessEvent() {
-    this.alertService.success();
+    this.alertService.success("default-id");
   }
 }
+
