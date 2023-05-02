@@ -3,8 +3,6 @@ import {AlertService} from "./alert.service";
 import {Subscription} from "rxjs";
 import {Alert, AlertType} from "./alert.model";
 
-let input = Input;
-
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
