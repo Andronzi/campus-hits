@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {AlertService} from "./alert/alert.service";
+import { Component } from '@angular/core';
+import { AlertService } from "./alert/alert.service";
+import { IAlertOptions } from "./alert/alert.model";
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,11 @@ import {AlertService} from "./alert/alert.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  private alertOptions: IAlertOptions = { autoClose: true };
   constructor(private alertService: AlertService) { }
 
   alertAboutSuccessEvent() {
-    this.alertService.success("default-id");
+    this.alertService.success("home component", this.alertOptions);
   }
 }
 
