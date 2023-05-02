@@ -39,6 +39,6 @@ export class AlertComponent implements OnInit, OnDestroy {
   private removeAlert(alert: Alert) {
     if (!this.alertsContainer.includes(alert)) return;
 
-    this.alertsContainer = this.alertsContainer.filter(alert => alert !== alert);
+    this.alertsContainer = this.alertsContainer.filter(x => x !== alert);
   }
 }
